@@ -6,7 +6,7 @@ const getData = require("./../Database/getDatabaseLocal")
 
 const displayNews = function () {
 	const newsInjection = document.getElementById("news-inject")
-	const database = getData(function (){
+	getData(function (database){
 
 		// database.news.sort((p,n) => n.newsId - p.newsId)
 		database.news.forEach((current) => {

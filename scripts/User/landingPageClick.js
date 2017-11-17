@@ -23,19 +23,19 @@ const landingPageClick = function () {
 			document.querySelector("button").addEventListener("click", () =>{
 				const emailValidation = document.querySelector("input[name='email']").value
 				const usernameValidation = document.querySelector("input[name='username']").value
-				const userDatabase = getDatabase(function (){
+				getDatabase(function (database){
 
-					const foundAccount = userDatabase.users.find((object) => {
+					const foundAccount = database.users.find((object) => {
 						return object.email === emailValidation && object.username === usernameValidation
 					})
 					if (foundAccount){
-						const stringyUserObject = JSON.stringify(foundAccount)
-						sessionStorage.setItem("activeUser", stringyUserObject)
-						hide(loginRegisterArticle)
-						greetUser()
+					// 	const stringyUserObject = JSON.stringify(foundAccount)
+					// 	sessionStorage.setItem("activeUser", stringyUserObject)
+					// 	hide(loginRegisterArticle)
+					// 	greetUser()
 						logout()
 						reveal(navigation)
-						// Display dashboard
+					// 	// Display dashboard
 					} else {
 						alert("Username/Email not recognized. YOU SHALL NOT PASS!!")
 					}
@@ -69,10 +69,10 @@ const landingPageClick = function () {
 		// 			}
 		// 		}
 		// 	} )
+		
 		}
 
 	}
 }
 
 module.exports = landingPageClick
-

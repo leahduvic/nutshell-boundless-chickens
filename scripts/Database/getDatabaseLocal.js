@@ -1,6 +1,6 @@
 const getDatabase = function (loading) {
 	$.ajax({
-		"url": "database.json",
+		"url": "./scripts/Database/database.json",
 		"method": "GET"
 	}).then (database => {
 		loading(database)
