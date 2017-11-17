@@ -1,7 +1,11 @@
-const eggShellDatabase = require("./eggshellDatabase")
-// Retrieves the database from local storage for modification
-const getDatabase = function () {
-	return  JSON.parse(localStorage.getItem("eggshellDatabase"))
+const getDatabase = function (loading) {
+	$.ajax({
+		"url": "database.json",
+		"method": "GET"
+	}).then (database => {
+		loading(database)
+	})
+	
 }
 
 module.exports = getDatabase

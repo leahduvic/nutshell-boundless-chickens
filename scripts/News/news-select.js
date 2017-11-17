@@ -7,7 +7,7 @@ const displayNews = require("./displayNewsArt")
 const newsSectionTarget = function () {
 	document.getElementById("news_section").addEventListener("click", () => {
 		reveal(document.getElementById("dashboard"))
-		newsForm()
+		// newsForm()
 		newSubmitClick()
 		document.getElementById("news-inject").innerHTML =""
 		displayNews()
